@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÉLOR | Home</title>
+    <style>
+        body{
+            margin:0px;
+            padding: 0px;
+        }
+
+        header{
+            height: 80px;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            padding: 0px;
+            display: flex;
+            box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.3);
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        body::before {
+            content: "";
+            display: block;
+            height: 80px;
+        }
+
+        .nav{
+            list-style: none;    
+            display: flex;            
+            justify-content: center;
+            align-items: center;
+            gap: 20%;                 
+            margin: 0;
+            padding: 1%;
+            font-family: Arial, sans-serif;
+            font-size: 95%; 
+        }
+
+        .nav_text{
+            color: rgb(94, 94, 94);
+            text-decoration:none;
+        }
+
+        .nav_text:hover{
+            color: black;
+        }
+        .nav_text:active{
+            color: gray;
+        }
+        .cart{
+            height: 50%;
+            border: none;
+            padding: 5px;
+            border-radius: 25px;
+            width: 50px;
+            font-size: 80%;
+            background-color: rgb(46, 46, 46);
+            color: white;
+            cursor:pointer;
+        }
+
+        .cart:hover{
+            background-color: black;
+            transition-duration: 150ms;
+        }
+
+        .cart:active{
+            background-color: rgb(85, 85, 85);
+            transition-duration: 150ms;
+        }
+        .banner{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+         <ul class="nav">
+            <li><img style="width: 90px; padding-top: 10px;" src="sources/logom.png" alt="logo"></li>
+            <li><a class="nav_text" target="_parent" href="">Men</a></li>
+            <li><a class="nav_text" target="_parent" href="">Women</a></li>
+            <li><a class="nav_text" target="_parent" href="">Kids</a></li>
+            <li><a class="nav_text" target="_parent" href="">Accessories</a></li>
+            <li><a target="_self" href=""><button class="cart">Cart</button></a></li>
+        </ul>       
+    </header>
+    <div>
+        <center>
+            <img class="banner" src="sources/banner.jpg" alt="banner">
+        </center>
+    </div>
+</body>
+</html>
