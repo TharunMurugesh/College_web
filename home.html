@@ -5,97 +5,243 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TÉLOR | Home</title>
     <style>
-        body{
-            margin:0px;
-            padding: 0px;
+        @import url('https://fonts.cdnfonts.com/css/century-gothic');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Century Gothic', sans-serif;
+            background-color: #fff;
+            color: #111;
         }
 
-        header{
+        header {
             height: 80px;
             width: 100%;
-            background-color: rgb(255, 255, 255);
-            padding: 0px;
-            display: flex;
-            box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
             align-items: center;
+            display: flex;
             justify-content: center;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
+            backdrop-filter: blur(90px);
         }
 
-        body::before {
-            content: "";
-            display: block;
-            height: 80px;
-        }
-
-        .nav{
-            list-style: none;    
-            display: flex;            
+        .nav {
+            list-style: none;
+            display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20%;                 
+            gap: 20%;
             margin: 0;
             padding: 1%;
-            font-family: Arial, sans-serif;
-            font-size: 95%; 
+            font-size: 95%;
         }
 
-        .nav_text{
+        .nav_text {
             color: rgb(94, 94, 94);
-            text-decoration:none;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
         }
 
-        .nav_text:hover{
+        .nav_text:hover {
             color: black;
         }
-        .nav_text:active{
-            color: gray;
-        }
-        .cart{
-            height: 50%;
+
+        .cart {
             border: none;
-            padding: 5px;
+            padding: 5px 10px;
             border-radius: 25px;
-            width: 50px;
+            width: 60px;
             font-size: 80%;
             background-color: rgb(46, 46, 46);
             color: white;
-            cursor:pointer;
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out;
         }
 
-        .cart:hover{
+        .cart:hover {
             background-color: black;
-            transition-duration: 150ms;
         }
 
-        .cart:active{
-            background-color: rgb(85, 85, 85);
-            transition-duration: 150ms;
-        }
-        .banner{
+        .banner-container {
+            position: relative;
             width: 100%;
+            overflow: hidden;
+            margin-top: -80px;
         }
 
+        .banner {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0px 1px 10px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .banner-button {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 90%;
+            background-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(90px);
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out;
+            font-family: 'Century Gothic', sans-serif;
+        }
+
+        .banner-button:hover {
+            background-color: rgba(160, 160, 160, 0.603);
+            backdrop-filter: blur(90px);
+        }
+
+        .offer-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 100px 10%;
+            gap: 100px;
+        }
+
+        .offer-section img {
+            width: 40%;
+            max-width: 500px;
+            box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
+
+        .offer-text {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .offer-text h2 {
+            font-size: 2.8em;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .offer-text p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #444;
+            max-width: 500px;
+        }
+
+        .accessories-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 100px 10%;
+            gap: 100px;
+            flex-direction: row-reverse;
+            background-color: #fafafa;
+        }
+
+        .accessories-section img {
+            width: 40%;
+            max-width: 500px;
+            box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+        }
+
+        .accessories-text {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .accessories-text h2 {
+            font-size: 2.8em;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .accessories-text p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #444;
+            max-width: 500px;
+        }
+
+        footer {
+            background-color: #fff;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 0.9em;
+            color: #555;
+            border-top: 1px solid #ddd;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 900px) {
+            .offer-section, .accessories-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .offer-section img, .accessories-section img {
+                width: 70%;
+            }
+
+            .offer-text h2, .accessories-text h2 {
+                font-size: 2em;
+            }
+
+            .offer-text p, .accessories-text p {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-         <ul class="nav">
+        <ul class="nav">
             <li><img style="width: 90px; padding-top: 10px;" src="sources/logom.png" alt="logo"></li>
-            <li><a class="nav_text" target="_parent" href="">Men</a></li>
-            <li><a class="nav_text" target="_parent" href="">Women</a></li>
-            <li><a class="nav_text" target="_parent" href="">Kids</a></li>
-            <li><a class="nav_text" target="_parent" href="">Accessories</a></li>
-            <li><a target="_self" href=""><button class="cart">Cart</button></a></li>
-        </ul>       
+            <li><a class="nav_text" href="#">Men</a></li>
+            <li><a class="nav_text" href="#">Women</a></li>
+            <li><a class="nav_text" href="#">Kids</a></li>
+            <li><a class="nav_text" href="#">Accessories</a></li>
+            <li><a href="#"><button class="cart">Cart</button></a></li>
+        </ul>
     </header>
-    <div>
-        <center>
-            <img class="banner" src="sources/banner.jpg" alt="banner">
-        </center>
+
+    <div class="banner-container">
+        <img class="banner" src="sources/banner.jpg" alt="banner">
+        <button class="banner-button">Visit Store</button>
     </div>
+
+    <section class="offer-section">
+        <img src="sources/h1.jpg" alt="man">
+        <div class="offer-text">
+            <h2>Holiday Season, Redefined</h2>
+            <p>Unwrap a world of effortless style — timeless pieces, refined textures, and silhouettes crafted to elevate your season. Discover the elegance of minimalism before it’s gone.</p>
+        </div>
+    </section>
+
+    <section class="accessories-section">
+        <img src="sources/accessories.png" alt="perfume">
+        <div class="accessories-text">
+            <h2>Accessories by TÉLOR</h2>
+            <p>Subtle sophistication meets everyday luxury. Explore our collection of finely crafted accessories — perfumes, essentials, and accents that define your style statement.</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 TÉLOR. All Rights Reserved.
+    </footer>
 </body>
 </html>
