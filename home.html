@@ -1,247 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TÉLOR | Home</title>
-    <style>
-        @import url('https://fonts.cdnfonts.com/css/century-gothic');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TÉLOR | Home</title>
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/century-gothic');
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Century Gothic', sans-serif;
-            background-color: #fff;
-            color: #111;
-        }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Century Gothic', sans-serif;
+      background-color: #fff;
+      color: #111;
+    }
 
-        header {
-            height: 80px;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.4);
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            backdrop-filter: blur(90px);
-        }
+    header {
+      height: 80px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      backdrop-filter: blur(90px);
+    }
 
-        .nav {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20%;
-            margin: 0;
-            padding: 1%;
-            font-size: 95%;
-        }
+    .nav {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15%;
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+    }
 
-        .nav_text {
-            color: rgb(94, 94, 94);
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
-        }
+    .nav li img {
+      width: 90px;
+      padding-top: 8px;
+    }
 
-        .nav_text:hover {
-            color: black;
-        }
+    .nav_text {
+      color: rgb(63, 63, 63);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease-in-out;
+    }
 
-        .cart {
-            border: none;
-            padding: 5px 10px;
-            border-radius: 25px;
-            width: 60px;
-            font-size: 80%;
-            background-color: rgb(46, 46, 46);
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.15s ease-in-out;
-        }
+    .nav_text:hover {
+      color: black;
+    }
 
-        .cart:hover {
-            background-color: black;
-        }
+    .cart {
+      border: none;
+      padding: 8px 18px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      background-color: rgb(46, 46, 46);
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.15s ease-in-out;
+    }
 
-        .banner-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            margin-top: -80px;
-        }
+    .cart:hover {
+      background-color: black;
+    }
 
-        .banner {
-            width: 100%;
-            display: block;
-            object-fit: cover;
-            box-shadow: 0px 1px 10px 5px rgba(0, 0, 0, 0.3);
-        }
+    .banner-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin-top: -80px;
+    }
 
-        .banner-button {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-size: 90%;
-            background-color: rgba(255, 255, 255, 0.4);
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(90px);
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.15s ease-in-out;
-            font-family: 'Century Gothic', sans-serif;
-        }
+    .banner {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 1px 10px 5px rgba(0, 0, 0, 0.3);
+    }
 
-        .banner-button:hover {
-            background-color: rgba(160, 160, 160, 0.603);
-            backdrop-filter: blur(90px);
-        }
+    .banner-button {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(90px);
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.15s ease-in-out;
+    }
 
-        .offer-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 100px 10%;
-            gap: 100px;
-        }
+    .banner-button:hover {
+      background-color: rgba(160, 160, 160, 0.603);
+    }
 
-        .offer-section img {
-            width: 40%;
-            max-width: 500px;
-            box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-        }
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 100px 10%;
+      gap: 100px;
+    }
 
-        .offer-text {
-            max-width: 600px;
-            text-align: left;
-        }
+    section img {
+      width: 40%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
+    }
 
-        .offer-text h2 {
-            font-size: 2.8em;
-            letter-spacing: 1px;
-            font-weight: 400;
-            margin-bottom: 15px;
-            color: #111;
-        }
+    .offer-text, .accessories-text {
+      max-width: 600px;
+      text-align: left;
+    }
 
-        .offer-text p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: #444;
-            max-width: 500px;
-        }
+    h2 {
+      font-size: 2.8em;
+      letter-spacing: 1px;
+      font-weight: 400;
+      margin-bottom: 15px;
+      color: #111;
+    }
 
-        .accessories-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 100px 10%;
-            gap: 100px;
-            flex-direction: row-reverse;
-            background-color: #fafafa;
-        }
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #444;
+      max-width: 500px;
+    }
 
-        .accessories-section img {
-            width: 40%;
-            max-width: 500px;
-            box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.15);
-            border-radius: 15px;
-        }
+    .accessories-section {
+      flex-direction: row-reverse;
+      background-color: #fafafa;
+    }
 
-        .accessories-text {
-            max-width: 600px;
-            text-align: left;
-        }
+    .bottom-banner {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      overflow: hidden;
+      margin-top: 60px;
+    }
 
-        .accessories-text h2 {
-            font-size: 2.8em;
-            letter-spacing: 1px;
-            font-weight: 400;
-            margin-bottom: 15px;
-            color: #111;
-        }
+    .bottom-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(60%);
+    }
 
-        .accessories-text p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: #444;
-            max-width: 500px;
-        }
+    .bottom-banner-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      padding: 30px 50px;
+      border-radius: 15px;
+      background-color: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+    }
 
-        footer {
-            background-color: #fff;
-            text-align: center;
-            padding: 25px 0;
-            font-size: 0.9em;
-            color: #555;
-            border-top: 1px solid #ddd;
-            letter-spacing: 0.5px;
-        }
+    .bottom-banner-content h2 {
+      font-size: 3em;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
 
-        @media (max-width: 900px) {
-            .offer-section, .accessories-section {
-                flex-direction: column;
-                text-align: center;
-                gap: 50px;
-            }
+    .bottom-banner-content p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+      color: #fff;
+    }
 
-            .offer-section img, .accessories-section img {
-                width: 70%;
-            }
+    .bottom-banner button {
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      background-color: rgba(255, 255, 255, 0.7);
+      color: black;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
 
-            .offer-text h2, .accessories-text h2 {
-                font-size: 2em;
-            }
+    .bottom-banner button:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
 
-            .offer-text p, .accessories-text p {
-                font-size: 1em;
-            }
-        }
-    </style>
+    footer {
+      background-color: #fff;
+      text-align: center;
+      padding: 25px 0;
+      font-size: 0.9em;
+      color: #555;
+      border-top: 1px solid #ddd;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 900px) {
+      section {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+      }
+
+      section img {
+        width: 70%;
+      }
+
+      h2 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      .nav {
+        gap: 50px;
+        font-size: 0.9rem;
+      }
+
+      .bottom-banner-content h2 {
+        font-size: 2em;
+      }
+
+      .bottom-banner-content p {
+        font-size: 1em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <ul class="nav">
-            <li><img style="width: 90px; padding-top: 10px;" src="sources/logom.png" alt="logo"></li>
-            <li><a class="nav_text" href="#">Men</a></li>
-            <li><a class="nav_text" href="#">Women</a></li>
-            <li><a class="nav_text" href="#">Kids</a></li>
-            <li><a class="nav_text" href="#">Accessories</a></li>
-            <li><a href="#"><button class="cart">Cart</button></a></li>
-        </ul>
-    </header>
+  <header>
+    <ul class="nav">
+      <li><img src="sources/logom.png" alt="logo"></li>
+      <li><a class="nav_text" href="men.html">Men</a></li>
+      <li><a class="nav_text" href="#">Women</a></li>
+      <li><a class="nav_text" href="#">Accessories</a></li>
+      <li><a href="#"><button class="cart">Cart</button></a></li>
+    </ul>
+  </header>
 
-    <div class="banner-container">
-        <img class="banner" src="sources/banner.jpg" alt="banner">
-        <button class="banner-button">Visit Store</button>
+  <div class="banner-container">
+    <img class="banner" src="sources/banner.jpg" alt="banner">
+    <button class="banner-button">Visit Store</button>
+  </div>
+
+  <section class="offer-section">
+    <img src="sources/h1.jpg" alt="man">
+    <div class="offer-text">
+      <h2>Holiday Season, Redefined</h2>
+      <p>Unwrap a world of effortless style — timeless pieces, refined textures, and silhouettes crafted to elevate your season. Discover the elegance of minimalism before it’s gone.</p>
     </div>
+  </section>
 
-    <section class="offer-section">
-        <img src="sources/h1.jpg" alt="man">
-        <div class="offer-text">
-            <h2>Holiday Season, Redefined</h2>
-            <p>Unwrap a world of effortless style — timeless pieces, refined textures, and silhouettes crafted to elevate your season. Discover the elegance of minimalism before it’s gone.</p>
-        </div>
-    </section>
+  <section class="accessories-section">
+    <img src="sources/accessories.png" alt="perfume">
+    <div class="accessories-text">
+      <h2>Accessories by TÉLOR</h2>
+      <p>Subtle sophistication meets everyday luxury. Explore our collection of finely crafted accessories — perfumes, essentials, and accents that define your style statement.</p>
+    </div>
+  </section>
 
-    <section class="accessories-section">
-        <img src="sources/accessories.png" alt="perfume">
-        <div class="accessories-text">
-            <h2>Accessories by TÉLOR</h2>
-            <p>Subtle sophistication meets everyday luxury. Explore our collection of finely crafted accessories — perfumes, essentials, and accents that define your style statement.</p>
-        </div>
-    </section>
+  <div class="bottom-banner">
+    <img src="sources/men_banner.jpg" alt="TÉLOR Coming Soon Banner">
+    <div class="bottom-banner-content">
+      <h2>Coming Soon</h2>
+      <p>Something timeless is on its way. Stay tuned for our next evolution in elegance.</p>
+      <button>Explore</button>
+    </div>
+  </div>
 
-    <footer>
-        © 2025 TÉLOR. All Rights Reserved.
-    </footer>
+  <footer>
+    © 2025 TÉLOR. All Rights Reserved.
+  </footer>
 </body>
 </html>
