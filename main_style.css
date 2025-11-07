@@ -1,5 +1,9 @@
 @import url('https://fonts.cdnfonts.com/css/century-gothic');
 
+/*READ ME, this whole code was written by ME, 
+and its not an AI generated page
+Have a nice day*/
+
 * {
   margin: 0;
   padding: 0;
@@ -187,7 +191,7 @@ section img {
   justify-content: center;
   padding: 10%;
   gap: 15px;
-  height: 650px;
+  height: 85vh;
 }
 
 .card {
@@ -279,6 +283,32 @@ footer {
   letter-spacing: 0.5px;
 }
 
+.imc_ban {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.082);
+  padding: 50px;
+  border-radius: 80px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  filter: grayscale(100%);
+  gap: 0;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+}
+
+.imc_ban:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+
+.imc{
+  width: 80%;
+  border-radius: 40px;
+}
 @media (max-width: 900px) {
   section {
     flex-direction: column;
